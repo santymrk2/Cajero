@@ -43,7 +43,6 @@ function entregarDinero() {
             if(e.cantidad > 0){
                 for(i = 0; i < e.cantidad; i++) {
                     e.mostrar();
-                    console.log(e.valor);
                 }
             }
         }
