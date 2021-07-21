@@ -19,20 +19,17 @@ class Billete {
 function entregarDinero() {
     var t = document.getElementById("dinero");
     dinero = parseInt(t.value);
+
     for (var b of caja) {
-
         if (dinero > 0) {
-
             div = Math.floor(dinero / b.valor);
-
             if (div > b.cantidad) {
                 papeles = b.cantidad;
             } else {
-
                 papeles = div;
             }
-
             entregado.push(new Billete(b.valor, papeles));
+            b.cantidad = b.cantidad - papeles;
             dinero = dinero - (b.valor * papeles);
         }
     }
